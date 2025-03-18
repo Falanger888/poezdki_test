@@ -1,0 +1,205 @@
+.section_one_list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section_two_list {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    margin-left: 20%;
+    margin-top: 10px;
+
+}
+
+.section_two_list li:last-child {
+    margin-left: 3%;
+
+}
+
+.button_new_poezdka {
+    background-color: #4094F7;
+    color: white;
+    border: none;
+    padding: 3px;
+}
+
+.section_one_list li:first-child {
+    margin-left: 20%;
+}
+
+.section_one_list li:last-child {
+    margin-right: 10%;
+}
+
+.section_one_list li img {
+    vertical-align: middle;
+    margin-left: 5px;
+}
+
+
+/* Третья секция */
+.section_three {
+    margin-left: 19%;
+    margin-top: 10px;
+}
+
+.section_three.period ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.section_three.period ul li {
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+.section_three.period ul li:last-child {
+    margin-left: auto;
+}
+
+.section_three.period input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-left: 5px;
+}
+
+.reset-link {
+    color: blue;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.reset-link:hover {
+    opacity: 0.7;
+}
+
+.reset-link img {
+    margin-right: 3px;
+    width: 12px;
+    height: 12px;
+    vertical-align: middle;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.date-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.date-input-wrapper input[type="text"] {
+    padding-right: 25px;
+}
+
+
+.date-input-wrapper .calendar-icon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.date-input-wrapper .clear-icon {
+    position: absolute;
+    top: 50%;
+    right: 25px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+.search-input::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.search-input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.search-input-wrapper .clear-icon {
+    position: absolute;
+    top: 50%;
+    right: 5px;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+/* Таблица */
+table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-left: 20%;
+    table-layout: fixed;
+    font-size: 14px;
+    margin-top: 20px;
+    /* Общий размер шрифта для таблицы */
+}
+
+td {
+    padding: 8px;
+    text-align: left;
+    /* Выравниваем текст по левому краю */
+    word-break: break-word;
+    border: none;
+    /* Убираем границы по умолчанию */
+}
+
+/* При наведении на строку */
+tbody tr:hover {
+    border: 1px solid #9BCFFD;
+    border-radius: 30px;
+}
+
+/* Ширина колонки "Дата поездки" */
+td:nth-child(2) {
+    width: 20%;
+}
+
+/* Ширина колонки "Город" */
+td:nth-child(5) {
+    width: 40%;
+}
+
+/* Ширина остальных колонок */
+td:not(:nth-child(2)):not(:nth-child(5)) {
+    /* Все колонки, кроме даты и города */
+    width: 13.33%;
+    /* (100% - 20% - 40%) / 3 = 40% / 3 */
+}
+
+.header-text {
+    color: #84919A;
+    font-size: 12px;
+    margin-bottom: 10px;
+    display: block;
+}

@@ -1,0 +1,184 @@
+<!-- Работа начата в 21:30 по времени +7 -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои поездки</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <section class="section_one profile_bar">
+        <div>
+            <ul class="section_one_list">
+                <li>
+                    Поездки
+                </li>
+                <li>
+                    Заболоцкий К.О
+                    <img src="img/exit.png" alt="exit">
+                </li>
+            </ul>
+        </div>
+
+    </section class="section_two new_poezdka">
+    <section>
+        <ul class="section_two_list">
+            <li>
+                Мои поездки
+            </li>
+            <li>
+                <button class="button_new_poezdka">
+                    + Оформить поездку
+                </button>
+            </li>
+        </ul>
+    </section>
+    <section class="section_three period">
+        <ul>
+            <li>Период с:
+                <div class="date-input-wrapper">
+                    <input type="text" placeholder="Выберите дату">
+                    <span class="clear-icon">X</span>
+                    <span class="calendar-icon">C</span>
+                </div>
+            </li>
+            <li>по:
+                <div class="date-input-wrapper">
+                    <input type="text" placeholder="Выберите дату">
+                    <span class="clear-icon">X</span>
+                    <span class="calendar-icon">C</span>
+                </div>
+            </li>
+            <li>Поиск
+                <div class="search-input-wrapper">
+                    <input type="text" class="search-input" placeholder="Поиск">
+                    <span class="clear-icon">X</span>
+                </div>
+            </li>
+            <li>
+                <a href="#" class="reset-link">
+                    <img src="" alt="Крестик">
+                    Сбросить все
+                </a>
+            </li>
+            <li>
+                <label class="checkbox-label">
+                    <input type="checkbox">
+                    Показать архивные поездки
+                </label>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <table>
+            <tbody>
+                <!-- Таблица будет заполнена JavaScript -->
+            </tbody>
+        </table>
+
+        <script>
+            const data = [
+                {
+                    "№ поездки": "000115",
+                    "Дата поездки": "22.02.2024 - 27.02.2024",
+                    "Сумма, план": "25 000,00",
+                    "Сумма, факт": "24 500,00",
+                    "Город": "Москва",
+                    "Статус": "Завершена"
+                },
+                {
+                    "№ поездки": "000116",
+                    "Дата поездки": "01.03.2024 - 05.03.2024",
+                    "Сумма, план": "30 000,00",
+                    "Сумма, факт": "29 000,00",
+                    "Город": "Санкт-Петербург",
+                    "Статус": "В процессе"
+                },
+                {
+                    "№ поездки": "000117",
+                    "Дата поездки": "10.03.2024 - 15.03.2024",
+                    "Сумма, план": "40 000,00",
+                    "Сумма, факт": "38 000,00",
+                    "Город": "Сочи",
+                    "Статус": "Завершена"
+                },
+                {
+                    "№ поездки": "000118",
+                    "Дата поездки": "15.03.2024 - 20.03.2024",
+                    "Сумма, план": "35 000,00",
+                    "Сумма, факт": "34 000,00",
+                    "Город": "Казань",
+                    "Статус": "В процессе"
+                },
+                {
+                    "№ поездки": "000119",
+                    "Дата поездки": "20.03.2024 - 25.03.2024",
+                    "Сумма, план": "28 000,00",
+                    "Сумма, факт": "27 000,00",
+                    "Город": "Екатеринбург",
+                    "Статус": "Завершена"
+                },
+                {
+                    "№ поездки": "000120",
+                    "Дата поездки": "25.03.2024 - 30.03.2024",
+                    "Сумма, план": "32 000,00",
+                    "Сумма, факт": "31 000,00",
+                    "Город": "Новосибирск",
+                    "Статус": "В процессе"
+                },
+                {
+                    "№ поездки": "000121",
+                    "Дата поездки": "30.03.2024 - 04.04.2024",
+                    "Сумма, план": "42 000,00",
+                    "Сумма, факт": "41 000,00",
+                    "Город": "Нижний Новгород",
+                    "Статус": "Завершена"
+                },
+                {
+                    "№ поездки": "000122",
+                    "Дата поездки": "05.04.2024 - 10.04.2024",
+                    "Сумма, план": "26 000,00",
+                    "Сумма, факт": "25 000,00",
+                    "Город": "Самара",
+                    "Статус": "В процессе"
+                },
+                {
+                    "№ поездки": "000123",
+                    "Дата поездки": "10.04.2024 - 15.04.2024",
+                    "Сумма, план": "38 000,00",
+                    "Сумма, факт": "37 000,00",
+                    "Город": "Ростов-на-Дону",
+                    "Статус": "Завершена"
+                }
+            ];
+
+            function createTableCell(header, value) {
+                return `<td><span class="header-text">${header}</span><br>${value}</td>`;
+            }
+
+            function createTableRow(dataItem) {
+                let rowHTML = "";
+                for (const key in dataItem) {
+                    if (dataItem.hasOwnProperty(key)) {
+                        rowHTML += createTableCell(key, dataItem[key]);
+                    }
+                }
+                return `<tr>${rowHTML}</tr>`;
+            }
+
+            const tbody = document.querySelector('tbody');
+
+            data.forEach(item => {
+                const rowHTML = createTableRow(item);
+                tbody.innerHTML += rowHTML;
+            });
+        </script>
+
+    </section>
+</body>
+
+</html>
+<!-- Работу закончил в 22:30 по +7 -->
