@@ -1,205 +1,264 @@
-.section_one_list {
+/* Базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+    background-color: #f5f7f9;
+    color: #1f2937;
+    line-height: 1.5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Шапка */
+.top-bar {
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 15px 0;
+}
+
+.top-bar-content {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    box-sizing: border-box;
 }
 
-.section_two_list {
+.logo {
+    font-weight: 700;
+    font-size: 18px;
+    color: #4094F7;
+}
+
+.user-profile {
     display: flex;
     align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    margin-left: 20%;
-    margin-top: 10px;
-
+    gap: 15px;
+    font-size: 14px;
+    font-weight: 500;
 }
 
-.section_two_list li:last-child {
-    margin-left: 3%;
-
+.logout-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #84919A;
+    display: flex;
+    align-items: center;
+    transition: color 0.2s;
 }
 
-.button_new_poezdka {
+.logout-btn:hover {
+    color: #e11d48;
+}
+
+/* Заголовок страницы */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0;
+}
+
+.page-header h1 {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.btn-primary {
     background-color: #4094F7;
     color: white;
     border: none;
-    padding: 3px;
+    padding: 10px 20px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
 
-.section_one_list li:first-child {
-    margin-left: 20%;
+.btn-primary:hover {
+    background-color: #1e78e0;
 }
 
-.section_one_list li:last-child {
-    margin-right: 10%;
-}
-
-.section_one_list li img {
-    vertical-align: middle;
-    margin-left: 5px;
-}
-
-
-/* Третья секция */
-.section_three {
-    margin-left: 19%;
-    margin-top: 10px;
-}
-
-.section_three.period ul {
+/* Фильтры */
+.filters-panel {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
     display: flex;
-    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 20px;
     align-items: center;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+    margin-bottom: 20px;
+}
+
+.filter-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.filter-group label {
+    font-size: 14px;
+    color: #4b5563;
+}
+
+.input-wrapper input {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.input-wrapper input:focus {
+    border-color: #4094F7;
+}
+
+.search-group {
+    flex-grow: 1;
+}
+
+.search-group .input-wrapper {
     width: 100%;
-    box-sizing: border-box;
 }
 
-.section_three.period ul li {
-    margin-left: 15px;
-    white-space: nowrap;
+.search-group input {
+    width: 100%;
 }
 
-.section_three.period ul li:last-child {
+.filter-actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
     margin-left: auto;
 }
 
-.section_three.period input[type="text"] {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-left: 5px;
-}
-
 .reset-link {
-    color: blue;
+    color: #4094F7;
     text-decoration: none;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    transition: opacity 0.2s;
 }
 
 .reset-link:hover {
     opacity: 0.7;
 }
 
-.reset-link img {
-    margin-right: 3px;
-    width: 12px;
-    height: 12px;
-    vertical-align: middle;
-}
-
 .checkbox-label {
     display: flex;
     align-items: center;
-    cursor: pointer;
-
-}
-
-.checkbox-label input[type="checkbox"] {
-    margin-right: 5px;
-}
-
-.date-input-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.date-input-wrapper input[type="text"] {
-    padding-right: 25px;
-}
-
-
-.date-input-wrapper .calendar-icon {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-.date-input-wrapper .clear-icon {
-    position: absolute;
-    top: 50%;
-    right: 25px;
-    transform: translateY(-50%);
-    cursor: pointer;
-}
-
-.search-input::placeholder {
-    color: #999;
-    font-style: italic;
-}
-
-.search-input-wrapper {
-    position: relative;
-    display: inline-block;
-}
-
-.search-input-wrapper .clear-icon {
-    position: absolute;
-    top: 50%;
-    right: 5px;
-    transform: translateY(-50%);
+    gap: 8px;
+    font-size: 14px;
     cursor: pointer;
 }
 
 /* Таблица */
+.table-wrapper {
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    overflow-x: auto;
+}
+
 table {
+    width: 100%;
     border-collapse: collapse;
-    width: 80%;
-    margin-left: 20%;
-    table-layout: fixed;
-    font-size: 14px;
-    margin-top: 20px;
-    /* Общий размер шрифта для таблицы */
+    text-align: left;
 }
 
 td {
-    padding: 8px;
-    text-align: left;
-    /* Выравниваем текст по левому краю */
-    word-break: break-word;
-    border: none;
-    /* Убираем границы по умолчанию */
+    padding: 16px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    border-bottom: 1px solid #e5e7eb;
+    vertical-align: top;
 }
 
-/* При наведении на строку */
+tbody tr {
+    transition: background-color 0.2s;
+}
+
 tbody tr:hover {
-    border: 1px solid #9BCFFD;
-    border-radius: 30px;
+    background-color: #f0f7ff;
 }
 
-/* Ширина колонки "Дата поездки" */
-td:nth-child(2) {
-    width: 20%;
+tbody tr:last-child td {
+    border-bottom: none;
 }
 
-/* Ширина колонки "Город" */
-td:nth-child(5) {
-    width: 40%;
-}
-
-/* Ширина остальных колонок */
-td:not(:nth-child(2)):not(:nth-child(5)) {
-    /* Все колонки, кроме даты и города */
-    width: 13.33%;
-    /* (100% - 20% - 40%) / 3 = 40% / 3 */
-}
-
+/* Тот самый заголовок внутри ячейки */
 .header-text {
+    display: block;
     color: #84919A;
     font-size: 12px;
-    margin-bottom: 10px;
-    display: block;
+    font-weight: 400;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Статусы */
+.status {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.status-completed {
+    background-color: #def7ec;
+    color: #03543f;
+}
+
+.status-progress {
+    background-color: #e1effe;
+    color: #1e429f;
+}
+
+/* Адаптив */
+@media (max-width: 768px) {
+    .filters-panel {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .filter-group .input-wrapper,
+    .filter-group input {
+        width: 100%;
+    }
+
+    .filter-actions {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-left: 0;
+    }
+
+    .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+    
+    td {
+        padding: 12px;
+        font-size: 13px;
+    }
 }
